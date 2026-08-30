@@ -520,7 +520,30 @@ body {
 }
 
 
-.example-images img {
+.example-image-button {
+  display: block;
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  cursor: zoom-in;
+
+  overflow: hidden;
+
+  appearance: none;
+
+  -webkit-appearance: none;
+}
+
+
+.example-image-button img {
   display: block;
 
   width: 100%;
@@ -534,7 +557,7 @@ body {
     solid
     rgba(0, 0, 0, 0.3);
 
-  cursor: zoom-in;
+  pointer-events: none;
 
   transition:
     opacity
@@ -546,7 +569,7 @@ body {
 }
 
 
-.example-images img:hover {
+.example-image-button:hover img {
   opacity: 0.82;
 
   transform:
@@ -556,7 +579,7 @@ body {
 }
 
 
-.example-images img:focus-visible {
+.example-image-button:focus-visible {
   outline:
     3px
     solid
@@ -781,6 +804,10 @@ body {
   line-height: 1;
 
   cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance: none;
 }
 
 

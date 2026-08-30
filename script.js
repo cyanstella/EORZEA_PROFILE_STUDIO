@@ -167,12 +167,6 @@ languageButtons.forEach(
    IMAGE LIGHTBOX
 ========================================== */
 
-const exampleImages =
-  document.querySelectorAll(
-    ".example-images img"
-  );
-
-
 const imageLightbox =
   document.getElementById(
     "imageLightbox"
@@ -191,7 +185,24 @@ const lightboxClose =
   );
 
 
+const exampleImageButtons =
+  document.querySelectorAll(
+    ".example-image-button"
+  );
+
+
 function openLightbox(image) {
+
+  if (
+    !image ||
+    !imageLightbox ||
+    !lightboxImage
+  ) {
+
+    return;
+
+  }
+
 
   lightboxImage.src =
     image.src;
@@ -221,6 +232,16 @@ function openLightbox(image) {
 
 function closeLightbox() {
 
+  if (
+    !imageLightbox ||
+    !lightboxImage
+  ) {
+
+    return;
+
+  }
+
+
   imageLightbox.classList.remove(
     "active"
   );
@@ -243,12 +264,23 @@ function closeLightbox() {
 }
 
 
-exampleImages.forEach(
-  image => {
+exampleImageButtons.forEach(
+  button => {
 
-    image.addEventListener(
+    button.addEventListener(
       "click",
-      () => {
+      event => {
+
+        event.preventDefault();
+
+        event.stopPropagation();
+
+
+        const image =
+          button.querySelector(
+            "img"
+          );
+
 
         openLightbox(
           image
@@ -257,52 +289,51 @@ exampleImages.forEach(
       }
     );
 
-
-    image.addEventListener(
-      "keydown",
-      event => {
-
-        if (
-          event.key === "Enter" ||
-          event.key === " "
-        ) {
-
-          event.preventDefault();
-
-
-          openLightbox(
-            image
-          );
-
-        }
-
-      }
-    );
-
   }
 );
 
 
-lightboxClose.addEventListener(
-  "click",
-  closeLightbox
-);
+if (
+  lightboxClose
+) {
 
+  lightboxClose.addEventListener(
+    "click",
+    event => {
 
-imageLightbox.addEventListener(
-  "click",
-  event => {
+      event.preventDefault();
 
-    if (
-      event.target === imageLightbox
-    ) {
+      event.stopPropagation();
+
 
       closeLightbox();
 
     }
+  );
 
-  }
-);
+}
+
+
+if (
+  imageLightbox
+) {
+
+  imageLightbox.addEventListener(
+    "click",
+    event => {
+
+      if (
+        event.target === imageLightbox
+      ) {
+
+        closeLightbox();
+
+      }
+
+    }
+  );
+
+}
 
 
 document.addEventListener(
@@ -311,6 +342,7 @@ document.addEventListener(
 
     if (
       event.key === "Escape" &&
+      imageLightbox &&
       imageLightbox.classList.contains(
         "active"
       )
