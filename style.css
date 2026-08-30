@@ -526,6 +526,23 @@ body {
 }
 
 
+/* 03のように画像が1枚だけの場合も
+   01・02と同じサムネイル幅にする */
+
+.example-images-single {
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+}
+
+
+.example-images-single .example-image-button {
+  grid-column: 1;
+}
+
+
 .example-image-button {
   position: relative;
 
