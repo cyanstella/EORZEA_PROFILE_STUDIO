@@ -15,13 +15,13 @@ const translations = {
       "EORZEA PROFILE STUDIOは、FINAL FANTASY XIVのキャラクターや冒険の記録を楽しむための非公式Webツールシリーズです。",
 
     profileDescription:
-      "キャラクター設定についての20の質問に答えて、4枚のカラフルなプロフィールカードを作成できます。",
+      "キャラクター設定についての20の質問に答えて、4枚のオリジナルSS入りプロフィールカードを作成できます。",
 
     portraitDescription:
-      "Lodestoneのキャラクター情報と20の質問、スクリーンショットを組み合わせて、あなたの冒険を4枚のカードに。",
+      "Lodestoneのキャラクター情報と20の質問に答えて、あなたの冒険を4枚のカラフルなカードに。",
 
     snapshotDescription:
-      "スクリーンショットにキャラクター情報、ジョブ、プレイスタイル、質問への回答を添えて一枚のスナップショットに。",
+      "SSにキャラクター情報、ジョブ、プレイスタイル、質問への回答を添えて、自己紹介スナップショットに。",
 
     examples:
       "作成例",
@@ -53,13 +53,13 @@ const translations = {
       "EORZEA PROFILE STUDIO is an unofficial series of web tools created for enjoying FINAL FANTASY XIV characters and memories from your adventures.",
 
     profileDescription:
-      "Answer 20 questions about your character and create four colorful character profile cards.",
+      "Answer 20 questions about your character and create four original profile cards featuring your own screenshots.",
 
     portraitDescription:
-      "Combine your Lodestone character information, answers to 20 questions and screenshots to create four portrait cards.",
+      "Combine your Lodestone character information with answers to 20 questions and turn your adventures into four colorful cards.",
 
     snapshotDescription:
-      "Combine a screenshot with character information, jobs, play style and answers to create a single character snapshot.",
+      "Add character information, jobs, play style and answers to your screenshot to create a self-introduction snapshot.",
 
     examples:
       "EXAMPLES",
