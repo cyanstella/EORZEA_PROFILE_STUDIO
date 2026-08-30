@@ -178,7 +178,7 @@
 
 
       <p data-i18n="profileDescription">
-        キャラクター設定についての20の質問に答えて、プロフィールカードを作成できます。
+        キャラクター設定についての20の質問に答えて、4枚のカラフルなプロフィールカードを作成できます。
       </p>
 
 
@@ -197,11 +197,13 @@
           <img
             src="images/1-1.png"
             alt="FFXIV CHARACTER PROFILE CARD 作成例 1"
+            tabindex="0"
           >
 
           <img
             src="images/1-2.png"
             alt="FFXIV CHARACTER PROFILE CARD 作成例 2"
+            tabindex="0"
           >
 
         </div>
@@ -265,11 +267,13 @@
           <img
             src="images/2-1.png"
             alt="FFXIV CHARACTER PORTRAIT MAKER 作成例 1"
+            tabindex="0"
           >
 
           <img
             src="images/2-2.png"
             alt="FFXIV CHARACTER PORTRAIT MAKER 作成例 2"
+            tabindex="0"
           >
 
         </div>
@@ -388,6 +392,36 @@
 
 
 </main>
+
+
+
+<!-- ==========================================
+     IMAGE LIGHTBOX
+========================================== -->
+
+<div
+  class="image-lightbox"
+  id="imageLightbox"
+  aria-hidden="true"
+>
+
+  <button
+    type="button"
+    class="lightbox-close"
+    id="lightboxClose"
+    aria-label="閉じる"
+  >
+    ×
+  </button>
+
+
+  <img
+    id="lightboxImage"
+    src=""
+    alt=""
+  >
+
+</div>
 
 
 

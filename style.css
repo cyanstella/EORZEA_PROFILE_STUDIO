@@ -533,6 +533,36 @@ body {
     1px
     solid
     rgba(0, 0, 0, 0.3);
+
+  cursor: zoom-in;
+
+  transition:
+    opacity
+    0.2s
+    ease,
+    transform
+    0.2s
+    ease;
+}
+
+
+.example-images img:hover {
+  opacity: 0.82;
+
+  transform:
+    scale(
+      1.015
+    );
+}
+
+
+.example-images img:focus-visible {
+  outline:
+    3px
+    solid
+    var(--accent-red);
+
+  outline-offset: 3px;
 }
 
 
@@ -635,6 +665,132 @@ body {
   font-size: 11px;
 
   line-height: 1.9;
+}
+
+
+
+/* ==========================================
+   IMAGE LIGHTBOX
+========================================== */
+
+.image-lightbox {
+  position: fixed;
+
+  z-index: 9999;
+
+  inset: 0;
+
+  padding: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    rgba(
+      0,
+      0,
+      0,
+      0.88
+    );
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity
+    0.2s
+    ease,
+    visibility
+    0.2s
+    ease;
+}
+
+
+.image-lightbox.active {
+  opacity: 1;
+
+  visibility: visible;
+
+  pointer-events: auto;
+}
+
+
+.image-lightbox img {
+  display: block;
+
+  max-width:
+    min(
+      92vw,
+      1200px
+    );
+
+  max-height: 90vh;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+  box-shadow:
+    0
+    20px
+    60px
+    rgba(
+      0,
+      0,
+      0,
+      0.5
+    );
+}
+
+
+.lightbox-close {
+  position: fixed;
+
+  z-index: 10000;
+
+  top: 20px;
+
+  right: 24px;
+
+  width: 46px;
+
+  height: 46px;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: white;
+
+  font-family:
+    Arial,
+    sans-serif;
+
+  font-size: 38px;
+
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+.lightbox-close:hover {
+  opacity: 0.6;
+}
+
+
+body.lightbox-open {
+  overflow: hidden;
 }
 
 
@@ -865,6 +1021,28 @@ footer {
     padding:
       20px
       18px;
+  }
+
+
+  .image-lightbox {
+    padding:
+      60px
+      14px
+      20px;
+  }
+
+
+  .image-lightbox img {
+    max-width: 96vw;
+
+    max-height: 85vh;
+  }
+
+
+  .lightbox-close {
+    top: 12px;
+
+    right: 12px;
   }
 
 

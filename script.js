@@ -15,7 +15,7 @@ const translations = {
       "EORZEA PROFILE STUDIOは、FINAL FANTASY XIVのキャラクターや冒険の記録を楽しむための非公式Webツールシリーズです。",
 
     profileDescription:
-      "キャラクター設定についての20の質問に答えて、プロフィールカードを作成できます。",
+      "キャラクター設定についての20の質問に答えて、4枚のカラフルなプロフィールカードを作成できます。",
 
     portraitDescription:
       "Lodestoneのキャラクター情報と20の質問、スクリーンショットを組み合わせて、あなたの冒険を4枚のカードに。",
@@ -53,7 +53,7 @@ const translations = {
       "EORZEA PROFILE STUDIO is an unofficial series of web tools created for enjoying FINAL FANTASY XIV characters and memories from your adventures.",
 
     profileDescription:
-      "Answer 20 questions about your character and create a character profile card.",
+      "Answer 20 questions about your character and create four colorful character profile cards.",
 
     portraitDescription:
       "Combine your Lodestone character information, answers to 20 questions and screenshots to create four portrait cards.",
@@ -81,6 +81,10 @@ const translations = {
 };
 
 
+
+/* ==========================================
+   LANGUAGE
+========================================== */
 
 const languageButtons =
   document.querySelectorAll(
@@ -157,5 +161,172 @@ languageButtons.forEach(
   }
 );
 
+
+
+/* ==========================================
+   IMAGE LIGHTBOX
+========================================== */
+
+const exampleImages =
+  document.querySelectorAll(
+    ".example-images img"
+  );
+
+
+const imageLightbox =
+  document.getElementById(
+    "imageLightbox"
+  );
+
+
+const lightboxImage =
+  document.getElementById(
+    "lightboxImage"
+  );
+
+
+const lightboxClose =
+  document.getElementById(
+    "lightboxClose"
+  );
+
+
+function openLightbox(image) {
+
+  lightboxImage.src =
+    image.src;
+
+
+  lightboxImage.alt =
+    image.alt;
+
+
+  imageLightbox.classList.add(
+    "active"
+  );
+
+
+  imageLightbox.setAttribute(
+    "aria-hidden",
+    "false"
+  );
+
+
+  document.body.classList.add(
+    "lightbox-open"
+  );
+
+}
+
+
+function closeLightbox() {
+
+  imageLightbox.classList.remove(
+    "active"
+  );
+
+
+  imageLightbox.setAttribute(
+    "aria-hidden",
+    "true"
+  );
+
+
+  document.body.classList.remove(
+    "lightbox-open"
+  );
+
+
+  lightboxImage.src =
+    "";
+
+}
+
+
+exampleImages.forEach(
+  image => {
+
+    image.addEventListener(
+      "click",
+      () => {
+
+        openLightbox(
+          image
+        );
+
+      }
+    );
+
+
+    image.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Enter" ||
+          event.key === " "
+        ) {
+
+          event.preventDefault();
+
+
+          openLightbox(
+            image
+          );
+
+        }
+
+      }
+    );
+
+  }
+);
+
+
+lightboxClose.addEventListener(
+  "click",
+  closeLightbox
+);
+
+
+imageLightbox.addEventListener(
+  "click",
+  event => {
+
+    if (
+      event.target === imageLightbox
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+document.addEventListener(
+  "keydown",
+  event => {
+
+    if (
+      event.key === "Escape" &&
+      imageLightbox.classList.contains(
+        "active"
+      )
+    ) {
+
+      closeLightbox();
+
+    }
+
+  }
+);
+
+
+
+/* ==========================================
+   INITIAL LANGUAGE
+========================================== */
 
 changeLanguage("ja");
