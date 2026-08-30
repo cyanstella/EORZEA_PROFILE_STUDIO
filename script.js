@@ -1,0 +1,155 @@
+let currentLanguage = "ja";
+
+
+const translations = {
+
+  ja: {
+
+    heroLine1:
+      "あなたのキャラクターを、",
+
+    heroLine2:
+      "もっとあなたらしく。",
+
+    heroDescription:
+      "EORZEA PROFILE STUDIOは、FINAL FANTASY XIVのキャラクターや冒険の記録を楽しむための非公式Webツールシリーズです。",
+
+    portraitDescription:
+      "Lodestoneのキャラクター情報と20の質問、スクリーンショットを組み合わせて、あなたの冒険を4枚のカードに。",
+
+    profileDescription:
+      "キャラクター設定についての20の質問に答えて、プロフィールカードを作成できます。",
+
+    snapshotDescription:
+      "スクリーンショットにキャラクター情報、ジョブ、プレイスタイル、質問への回答を添えて一枚のスナップショットに。",
+
+    openTool:
+      "OPEN TOOL →",
+
+    aboutText:
+      "EORZEA PROFILE STUDIOでは、FINAL FANTASY XIVのキャラクターをテーマにしたプロフィール・カード・画像作成ツールを公開しています。",
+
+    disclaimerTitle:
+      "免責事項",
+
+    disclaimerText:
+      "本サイトおよび各ツールは個人が制作・運営する非公式Webツールであり、株式会社スクウェア・エニックスとは関係ありません。本サイトの利用によって生じた損害・不利益について、制作者は責任を負いかねます。"
+
+  },
+
+
+  en: {
+
+    heroLine1:
+      "Your character,",
+
+    heroLine2:
+      "more uniquely yours.",
+
+    heroDescription:
+      "EORZEA PROFILE STUDIO is an unofficial series of web tools created for enjoying FINAL FANTASY XIV characters and memories from your adventures.",
+
+    portraitDescription:
+      "Combine your Lodestone character information, answers to 20 questions and screenshots to create four portrait cards.",
+
+    profileDescription:
+      "Answer 20 questions about your character and create a character profile card.",
+
+    snapshotDescription:
+      "Combine a screenshot with character information, jobs, play style and answers to create a single character snapshot.",
+
+    openTool:
+      "OPEN TOOL →",
+
+    aboutText:
+      "EORZEA PROFILE STUDIO provides profile, card and image-making tools themed around FINAL FANTASY XIV characters.",
+
+    disclaimerTitle:
+      "DISCLAIMER",
+
+    disclaimerText:
+      "This site and its tools are unofficial fan-made web tools and are not affiliated with or endorsed by SQUARE ENIX CO., LTD. The creator assumes no responsibility for any loss or damage arising from the use of this site."
+
+  }
+
+};
+
+
+
+const languageButtons =
+  document.querySelectorAll(
+    ".language-switch button"
+  );
+
+
+function changeLanguage(language) {
+
+  currentLanguage =
+    language;
+
+
+  document.documentElement.lang =
+    language;
+
+
+  document
+    .querySelectorAll(
+      "[data-i18n]"
+    )
+    .forEach(
+      element => {
+
+        const key =
+          element.dataset.i18n;
+
+
+        const value =
+          translations[language][key];
+
+
+        if (
+          value !== undefined
+        ) {
+
+          element.textContent =
+            value;
+
+        }
+
+      }
+    );
+
+
+  languageButtons.forEach(
+    button => {
+
+      button.classList.toggle(
+        "active",
+        button.dataset.lang === language
+      );
+
+    }
+  );
+
+}
+
+
+languageButtons.forEach(
+  button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        changeLanguage(
+          button.dataset.lang
+        );
+
+      }
+    );
+
+  }
+);
+
+
+changeLanguage("ja");
