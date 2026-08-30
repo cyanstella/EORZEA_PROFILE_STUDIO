@@ -118,7 +118,9 @@ body {
 
 
 
-/* LANGUAGE */
+/* ==========================================
+   LANGUAGE
+========================================== */
 
 .language-switch {
   display: flex;
@@ -356,6 +358,8 @@ body {
       minmax(0, 1fr)
     );
 
+  align-items: stretch;
+
   border-top:
     1px
     solid
@@ -371,7 +375,9 @@ body {
 .tool-card {
   position: relative;
 
-  min-height: 500px;
+  min-width: 0;
+
+  min-height: 660px;
 
   padding: 34px;
 
@@ -382,8 +388,6 @@ body {
   background: var(--background);
 
   color: var(--black);
-
-  text-decoration: none;
 
   border-right:
     1px
@@ -471,7 +475,7 @@ body {
 }
 
 
-.tool-card p {
+.tool-card > p {
   margin: 0;
 
   max-width: 340px;
@@ -482,16 +486,80 @@ body {
 }
 
 
+
+/* ==========================================
+   EXAMPLES
+========================================== */
+
+.tool-examples {
+  margin-top: 34px;
+}
+
+
+.example-label {
+  margin-bottom: 12px;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.14em;
+}
+
+
+.example-images {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(0, 1fr)
+    );
+
+  gap: 10px;
+}
+
+
+.example-images img {
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  object-fit: cover;
+
+  border:
+    1px
+    solid
+    rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* ==========================================
+   TOOL LINK
+========================================== */
+
 .tool-link {
   margin-top: auto;
 
-  padding-top: 50px;
+  padding-top: 42px;
+
+  color: var(--black);
+
+  text-decoration: none;
 
   font-size: 11px;
 
   font-weight: 900;
 
   letter-spacing: 0.12em;
+}
+
+
+.tool-link:hover {
+  text-decoration: underline;
 }
 
 
@@ -641,7 +709,12 @@ footer {
 
 
   .tool-card {
-    min-height: 350px;
+    min-height: 540px;
+  }
+
+
+  .example-images {
+    max-width: 600px;
   }
 
 }
@@ -741,7 +814,7 @@ footer {
 
 
   .tool-card {
-    min-height: 340px;
+    min-height: 520px;
 
     padding:
       26px
@@ -763,6 +836,21 @@ footer {
     top: 22px;
 
     right: 22px;
+  }
+
+
+  .tool-examples {
+    margin-top: 28px;
+  }
+
+
+  .example-images {
+    gap: 8px;
+  }
+
+
+  .tool-link {
+    padding-top: 36px;
   }
 
 
