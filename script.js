@@ -23,6 +23,9 @@ const translations = {
     snapshotDescription:
       "SSにキャラクター情報、ジョブ、プレイスタイル、質問への回答を添えて、自己紹介スナップショットに。",
 
+    glamourDescription:
+      "複数のスクリーンショットと装備情報を組み合わせて、雑誌のようなミラプリ紹介画像を作成できます。",
+
     examples:
       "作成例",
 
@@ -60,6 +63,9 @@ const translations = {
 
     snapshotDescription:
       "Add character information, jobs, play style and answers to your screenshot to create a self-introduction snapshot.",
+
+    glamourDescription:
+      "Combine multiple screenshots and equipment information to create a magazine-style glamour showcase image.",
 
     examples:
       "EXAMPLES",
@@ -304,7 +310,6 @@ if (
       event.preventDefault();
 
       event.stopPropagation();
-
 
       closeLightbox();
 
