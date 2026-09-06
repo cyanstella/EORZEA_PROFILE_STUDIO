@@ -2,31 +2,23 @@
   box-sizing: border-box;
 }
 
-
 :root {
   --background: #f4f1e9;
   --section-background: #ebe7de;
-
   --black: #171717;
-
   --accent-red: #ff6659;
   --accent-lime: #c7ff00;
-
   --border: rgba(0, 0, 0, 0.22);
 }
-
 
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0;
-
   background: var(--background);
   color: var(--black);
-
   font-family:
     Arial,
     "Helvetica Neue",
@@ -37,85 +29,52 @@ body {
 }
 
 
-
 /* ==========================================
    HEADER
 ========================================== */
 
 .site-header {
   min-height: 70px;
-
-  padding:
-    0
-    34px;
-
+  padding: 0 34px;
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
-  border-bottom:
-    1px
-    solid
-    var(--border);
+  border-bottom: 1px solid var(--border);
 }
-
 
 .brand-logo {
   display: flex;
-
   align-items: center;
-
   gap: 7px;
-
   color: var(--black);
-
   text-decoration: none;
-
   font-size: 16px;
-
   font-weight: 900;
-
   letter-spacing: -0.03em;
 }
-
 
 .brand-logo:hover {
   opacity: 0.58;
 }
 
-
 .studio-box {
-  padding:
-    9px
-    10px;
-
+  padding: 9px 10px;
   background: var(--black);
-
   color: white;
 }
 
-
 .header-right {
   display: flex;
-
   align-items: center;
-
   gap: 26px;
 }
 
-
 .header-sub {
   color: #666;
-
   font-size: 10px;
-
   font-weight: 800;
-
   letter-spacing: 0.16em;
 }
-
 
 
 /* ==========================================
@@ -126,44 +85,27 @@ body {
   display: flex;
 }
 
-
 .language-switch button {
   width: 76px;
-
   height: 34px;
-
   padding: 0;
-
-  border:
-    1px
-    solid
-    #aaa;
-
+  border: 1px solid #aaa;
   background: transparent;
-
   color: var(--black);
-
   font-size: 11px;
-
   font-weight: 800;
-
   cursor: pointer;
 }
-
 
 .language-switch button + button {
   border-left: 0;
 }
 
-
 .language-switch button.active {
   background: var(--black);
-
   color: white;
-
   border-color: var(--black);
 }
-
 
 
 /* ==========================================
@@ -171,119 +113,65 @@ body {
 ========================================== */
 
 .hero {
-  width:
-    min(
-      1450px,
-      100%
-    );
-
-  margin:
-    0
-    auto;
-
-  padding:
-    120px
-    52px
-    135px;
+  width: min(1450px, 100%);
+  margin: 0 auto;
+  padding: 120px 52px 135px;
 }
-
 
 .hero-label {
   display: flex;
-
   align-items: center;
-
   gap: 12px;
-
   margin-bottom: 34px;
-
   font-size: 12px;
-
   font-weight: 900;
-
   letter-spacing: 0.16em;
 }
 
-
 .hero-accent {
   width: 34px;
-
   height: 14px;
-
   flex-shrink: 0;
-
   background: var(--accent-red);
 }
 
-
 .hero h1 {
   margin: 0;
-
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
-
-  font-size:
-    clamp(
-      54px,
-      6.3vw,
-      94px
-    );
-
+  font-size: clamp(54px, 6.3vw, 94px);
   line-height: 1.03;
-
   letter-spacing: -0.065em;
 }
-
 
 .hero-line {
   display: block;
 }
 
-
 .hero-marker {
   position: relative;
-
   z-index: 1;
-
   width: fit-content;
 }
 
-
 .hero-marker::after {
   content: "";
-
   position: absolute;
-
   z-index: -1;
-
   left: -0.035em;
-
   right: -0.035em;
-
   bottom: 0.035em;
-
   height: 0.19em;
-
   background: var(--accent-lime);
 }
 
-
 .hero p {
   max-width: 760px;
-
-  margin:
-    48px
-    0
-    0;
-
+  margin: 48px 0 0;
   font-size: 14px;
-
   line-height: 2;
 }
-
 
 
 /* ==========================================
@@ -291,50 +179,28 @@ body {
 ========================================== */
 
 .tools-section {
-  padding:
-    90px
-    40px
-    120px;
-
+  padding: 90px 40px 120px;
   background: var(--section-background);
 }
 
-
 .section-heading {
-  width:
-    min(
-      1400px,
-      100%
-    );
-
-  margin:
-    0
-    auto
-    42px;
-
+  width: min(1400px, 100%);
+  margin: 0 auto 42px;
   display: flex;
-
   align-items: center;
-
   gap: 20px;
 }
 
-
 .section-heading span {
   color: var(--accent-red);
-
   font-size: 12px;
-
   font-weight: 900;
 }
 
-
 .section-heading h2 {
   margin: 0;
-
   font-size: 32px;
 }
-
 
 
 /* ==========================================
@@ -342,151 +208,98 @@ body {
 ========================================== */
 
 .tool-grid {
-  width:
-    min(
-      1400px,
-      100%
-    );
-
+  width: min(1400px, 100%);
   margin: 0 auto;
 
   display: grid;
 
-  grid-template-columns:
-    repeat(
-      4,
-      minmax(0, 1fr)
-    );
+  /* 従来どおり3列 */
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   align-items: stretch;
 
-  border-top:
-    1px
-    solid
-    var(--black);
-
-  border-left:
-    1px
-    solid
-    var(--black);
+  border-top: 1px solid var(--black);
+  border-left: 1px solid var(--black);
 }
-
 
 .tool-card {
   position: relative;
-
   min-width: 0;
-
   min-height: 660px;
-
   padding: 34px;
 
   display: flex;
-
   flex-direction: column;
 
   overflow: hidden;
 
   background: var(--background);
-
   color: var(--black);
 
-  border-right:
-    1px
-    solid
-    var(--black);
+  border-right: 1px solid var(--black);
+  border-bottom: 1px solid var(--black);
 
-  border-bottom:
-    1px
-    solid
-    var(--black);
-
-  transition:
-    background
-    0.2s
-    ease;
+  transition: background 0.2s ease;
 }
-
 
 .tool-card:hover {
   background: var(--accent-lime);
 }
 
 
-.tool-number {
-  margin-bottom: 55px;
+/* ==========================================
+   04 GLAMOUR LOOKBOOK
 
-  color: var(--accent-red);
+   PCでは2段目の中央に配置
+========================================== */
 
-  font-size: 12px;
+.tool-card:nth-child(4) {
+  grid-column: 2;
 
-  font-weight: 900;
+  /* 2段目カード左側の枠線 */
+  border-left: 1px solid var(--black);
 }
 
+
+.tool-number {
+  margin-bottom: 55px;
+  color: var(--accent-red);
+  font-size: 12px;
+  font-weight: 900;
+}
 
 .new-label {
   position: absolute;
-
   top: 30px;
-
   right: 30px;
-
-  padding:
-    7px
-    9px;
-
+  padding: 7px 9px;
   background: var(--black);
-
   color: white;
-
   font-size: 9px;
-
   font-weight: 900;
-
   letter-spacing: 0.12em;
 }
 
-
 .tool-type {
   margin-bottom: 13px;
-
   font-size: 9px;
-
   font-weight: 900;
-
   letter-spacing: 0.16em;
 }
 
-
 .tool-card h3 {
-  margin:
-    0
-    0
-    30px;
-
-  font-size:
-    clamp(
-      24px,
-      2.2vw,
-      36px
-    );
-
+  margin: 0 0 30px;
+  font-size: clamp(24px, 2.2vw, 36px);
   line-height: 1.05;
-
   letter-spacing: -0.04em;
 }
 
-
 .tool-card > p {
   margin: 0;
-
   max-width: 340px;
-
   font-size: 12px;
-
   line-height: 1.9;
 }
-
 
 
 /* ==========================================
@@ -495,95 +308,62 @@ body {
 
 .tool-examples {
   margin-top: 34px;
-
   min-width: 0;
 }
 
-
 .example-label {
   margin-bottom: 12px;
-
   font-size: 9px;
-
   font-weight: 900;
-
   letter-spacing: 0.14em;
 }
 
-
 .example-images {
   width: 100%;
-
   display: grid;
-
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 10px;
 }
 
 
 /* 画像が1枚だけの場合も
-   2枚表示時と同じサムネイル幅にする */
+   2枚表示時と同じサムネイル幅 */
 
 .example-images-single {
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
-
 
 .example-images-single .example-image-button {
   grid-column: 1;
 }
 
-
 .example-image-button {
   position: relative;
-
   display: block;
-
   width: 100%;
-
   min-width: 0;
-
   aspect-ratio: 1 / 1;
-
   padding: 0;
 
-  border:
-    1px
-    solid
-    rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(0, 0, 0, 0.3);
 
   background: transparent;
-
   overflow: hidden;
 
   cursor: zoom-in;
 
   appearance: none;
-
   -webkit-appearance: none;
 }
 
-
 .example-image-button img {
   position: absolute;
-
   inset: 0;
 
   display: block;
 
   width: 100%;
-
   height: 100%;
-
   max-width: 100%;
 
   object-fit: cover;
@@ -591,34 +371,19 @@ body {
   pointer-events: none;
 
   transition:
-    opacity
-    0.2s
-    ease,
-    transform
-    0.2s
-    ease;
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
-
 
 .example-image-button:hover img {
   opacity: 0.82;
-
-  transform:
-    scale(
-      1.03
-    );
+  transform: scale(1.03);
 }
-
 
 .example-image-button:focus-visible {
-  outline:
-    3px
-    solid
-    var(--accent-red);
-
+  outline: 3px solid var(--accent-red);
   outline-offset: 3px;
 }
-
 
 
 /* ==========================================
@@ -627,7 +392,6 @@ body {
 
 .tool-link {
   margin-top: auto;
-
   padding-top: 42px;
 
   color: var(--black);
@@ -635,17 +399,13 @@ body {
   text-decoration: none;
 
   font-size: 11px;
-
   font-weight: 900;
-
   letter-spacing: 0.12em;
 }
-
 
 .tool-link:hover {
   text-decoration: underline;
 }
-
 
 
 /* ==========================================
@@ -653,74 +413,41 @@ body {
 ========================================== */
 
 .about-section {
-  padding:
-    100px
-    40px;
+  padding: 100px 40px;
 }
 
-
 .about-content {
-  width:
-    min(
-      800px,
-      100%
-    );
-
+  width: min(800px, 100%);
   margin: 0 auto;
 }
 
-
 .about-content > p {
-  margin:
-    0
-    0
-    34px;
-
+  margin: 0 0 34px;
   font-size: 14px;
-
   line-height: 2;
 }
 
-
 .disclaimer-box {
-  padding:
-    24px
-    26px;
+  padding: 24px 26px;
 
-  border:
-    1px
-    solid
-    rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.22);
 
-  background:
-    rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.35);
 }
 
-
 .disclaimer-box h3 {
-  margin:
-    0
-    0
-    12px;
-
+  margin: 0 0 12px;
   font-size: 11px;
-
   font-weight: 900;
-
   letter-spacing: 0.15em;
 }
 
-
 .disclaimer-box p {
   margin: 0;
-
   color: #555;
-
   font-size: 11px;
-
   line-height: 1.9;
 }
-
 
 
 /* ==========================================
@@ -729,65 +456,39 @@ body {
 
 .image-lightbox {
   position: fixed;
-
   z-index: 9999;
-
   inset: 0;
 
   padding: 40px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-  background:
-    rgba(
-      0,
-      0,
-      0,
-      0.88
-    );
+  background: rgba(0, 0, 0, 0.88);
 
   opacity: 0;
-
   visibility: hidden;
-
   pointer-events: none;
 
   transition:
-    opacity
-    0.2s
-    ease,
-    visibility
-    0.2s
-    ease;
+    opacity 0.2s ease,
+    visibility 0.2s ease;
 }
-
 
 .image-lightbox.active {
   opacity: 1;
-
   visibility: visible;
-
   pointer-events: auto;
 }
-
 
 .image-lightbox img {
   display: block;
 
-  max-width:
-    min(
-      92vw,
-      1200px
-    );
-
+  max-width: min(92vw, 1200px);
   max-height: 90vh;
 
   width: auto;
-
   height: auto;
 
   object-fit: contain;
@@ -796,61 +497,42 @@ body {
     0
     20px
     60px
-    rgba(
-      0,
-      0,
-      0,
-      0.5
-    );
+    rgba(0, 0, 0, 0.5);
 }
-
 
 .lightbox-close {
   position: fixed;
-
   z-index: 10000;
 
   top: 20px;
-
   right: 24px;
 
   width: 46px;
-
   height: 46px;
 
   padding: 0;
-
   border: 0;
 
   background: transparent;
-
   color: white;
 
-  font-family:
-    Arial,
-    sans-serif;
-
+  font-family: Arial, sans-serif;
   font-size: 38px;
-
   line-height: 1;
 
   cursor: pointer;
 
   appearance: none;
-
   -webkit-appearance: none;
 }
-
 
 .lightbox-close:hover {
   opacity: 0.6;
 }
 
-
 body.lightbox-open {
   overflow: hidden;
 }
-
 
 
 /* ==========================================
@@ -859,56 +541,35 @@ body.lightbox-open {
 
 footer {
   min-height: 90px;
-
   padding: 30px;
 
   display: grid;
-
-  grid-template-columns:
-    1fr
-    auto
-    1fr;
+  grid-template-columns: 1fr auto 1fr;
 
   align-items: center;
-
   gap: 20px;
 
-  border-top:
-    1px
-    solid
-    var(--border);
+  border-top: 1px solid var(--border);
 
   font-size: 10px;
-
   font-weight: 700;
 }
 
-
 .idea-by {
   display: flex;
-
   align-items: center;
-
   gap: 6px;
 }
 
-
 .idea-by a {
   color: var(--black);
-
   text-decoration: none;
-
-  border-bottom:
-    1px
-    solid
-    var(--black);
+  border-bottom: 1px solid var(--black);
 }
-
 
 .copyright {
   justify-self: end;
 }
-
 
 
 /* ==========================================
@@ -921,18 +582,24 @@ footer {
     grid-template-columns: 1fr;
   }
 
+  /*
+    PC用の04中央配置を解除。
+    01 → 02 → 03 → 04 の1列表示へ戻す。
+  */
+  .tool-card:nth-child(4) {
+    grid-column: auto;
+    border-left: 0;
+  }
 
   .tool-card {
     min-height: 540px;
   }
-
 
   .example-images {
     max-width: 600px;
   }
 
 }
-
 
 
 /* ==========================================
@@ -943,175 +610,116 @@ footer {
 
   .site-header {
     min-height: 60px;
-
-    padding:
-      12px
-      16px;
+    padding: 12px 16px;
   }
-
 
   .brand-logo {
     font-size: 11px;
   }
 
-
   .studio-box {
-    padding:
-      7px
-      8px;
+    padding: 7px 8px;
   }
-
 
   .header-sub {
     display: none;
   }
 
-
   .header-right {
     gap: 8px;
   }
 
-
   .language-switch button {
     width: 60px;
-
     height: 32px;
-
     font-size: 9px;
   }
 
-
   .hero {
-    padding:
-      75px
-      22px
-      90px;
+    padding: 75px 22px 90px;
   }
-
 
   .hero h1 {
-    font-size:
-      clamp(
-        40px,
-        11vw,
-        56px
-      );
+    font-size: clamp(40px, 11vw, 56px);
   }
-
 
   .hero-marker {
     white-space: normal;
   }
 
-
   .hero p {
     font-size: 13px;
   }
 
-
   .tools-section {
-    padding:
-      65px
-      14px
-      80px;
+    padding: 65px 14px 80px;
   }
-
 
   .section-heading {
     margin-bottom: 28px;
   }
 
-
   .section-heading h2 {
     font-size: 25px;
   }
 
-
   .tool-card {
     min-height: 520px;
-
-    padding:
-      26px
-      22px;
+    padding: 26px 22px;
   }
-
 
   .tool-number {
     margin-bottom: 38px;
   }
 
-
   .tool-card h3 {
     font-size: 28px;
   }
 
-
   .new-label {
     top: 22px;
-
     right: 22px;
   }
-
 
   .tool-examples {
     margin-top: 28px;
   }
 
-
   .example-images {
     gap: 8px;
   }
-
 
   .tool-link {
     padding-top: 36px;
   }
 
-
   .about-section {
-    padding:
-      70px
-      20px;
+    padding: 70px 20px;
   }
-
 
   .disclaimer-box {
-    padding:
-      20px
-      18px;
+    padding: 20px 18px;
   }
-
 
   .image-lightbox {
-    padding:
-      60px
-      14px
-      20px;
+    padding: 60px 14px 20px;
   }
-
 
   .image-lightbox img {
     max-width: 96vw;
-
     max-height: 85vh;
   }
 
-
   .lightbox-close {
     top: 12px;
-
     right: 12px;
   }
 
-
   footer {
     grid-template-columns: 1fr;
-
     gap: 10px;
-
     justify-items: start;
   }
-
 
   .copyright {
     justify-self: start;
