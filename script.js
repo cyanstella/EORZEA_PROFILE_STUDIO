@@ -1,369 +1,129 @@
+
 let currentLanguage = "ja";
 
-
 const translations = {
-
   ja: {
-
-    heroLine1:
-      "あなたのキャラクターを、",
-
-    heroLine2:
-      "もっとあなたらしく。",
-
-    heroDescription:
-      "EORZEA PROFILE STUDIOは、FINAL FANTASY XIVのキャラクターや冒険の記録を楽しむための非公式Webツールシリーズです。",
-
-    profileDescription:
-      "キャラクター設定についての20の質問に答えて、4枚のオリジナルSS入りプロフィールカードを作成できます。",
-
-    portraitDescription:
-      "Lodestoneのキャラクター情報と20の質問に答えて、あなたの冒険を4枚のカラフルなカードに。",
-
-    snapshotDescription:
-      "SSにキャラクター情報、ジョブ、プレイスタイル、質問への回答を添えて、自己紹介スナップショットに。",
-
-    glamourDescription:
-      "複数のスクリーンショットと装備情報を組み合わせて、雑誌のようなミラプリ紹介画像を作成できます。",
-
-    examples:
-      "作成例",
-
-    openTool:
-      "OPEN TOOL →",
-
-    aboutText:
-      "EORZEA PROFILE STUDIOでは、FINAL FANTASY XIVのキャラクターをテーマにしたプロフィール・カード・画像作成ツールを公開しています。",
-
-    disclaimerTitle:
-      "免責事項",
-
-    disclaimerText:
-      "本サイトおよび各ツールは個人が制作・運営する非公式Webツールであり、株式会社スクウェア・エニックスとは関係ありません。本サイトの利用によって生じた損害・不利益について、制作者は責任を負いかねます。"
-
+    heroLine1: "あなたのキャラクターを、",
+    heroLine2: "もっとあなたらしく。",
+    heroDescription: "EORZEA PROFILE STUDIOは、FINAL FANTASY XIVのキャラクターや冒険の記録を楽しむための非公式Webツールシリーズです。",
+    profileDescription: "キャラクター設定についての20の質問に答えて、4枚のオリジナルSS入りプロフィールカードを作成できます。",
+    portraitDescription: "Lodestoneのキャラクター情報と20の質問に答えて、あなたの冒険を4枚のカラフルなカードに。",
+    snapshotDescription: "SSにキャラクター情報、ジョブ、プレイスタイル、質問への回答を添えて、自己紹介スナップショットに。",
+    glamourDescription: "複数のスクリーンショットと装備情報を組み合わせて、雑誌のようなミラプリ紹介画像を作成できます。",
+    wallpaperDescription: "FF14のスクリーンショットにカレンダーを組み合わせて、オリジナルのスマホ用壁紙を作成できます。",
+    examples: "作成例",
+    openTool: "OPEN TOOL →",
+    aboutText: "EORZEA PROFILE STUDIOでは、FINAL FANTASY XIVのキャラクターをテーマにしたプロフィール・カード・画像作成ツールを公開しています。",
+    disclaimerTitle: "免責事項",
+    disclaimerText: "本サイトおよび各ツールは個人が制作・運営する非公式Webツールであり、株式会社スクウェア・エニックスとは関係ありません。本サイトの利用によって生じた損害・不利益について、制作者は責任を負いかねます。"
   },
 
-
   en: {
-
-    heroLine1:
-      "Your character,",
-
-    heroLine2:
-      "more uniquely yours.",
-
-    heroDescription:
-      "EORZEA PROFILE STUDIO is an unofficial series of web tools created for enjoying FINAL FANTASY XIV characters and memories from your adventures.",
-
-    profileDescription:
-      "Answer 20 questions about your character and create four original profile cards featuring your own screenshots.",
-
-    portraitDescription:
-      "Combine your Lodestone character information with answers to 20 questions and turn your adventures into four colorful cards.",
-
-    snapshotDescription:
-      "Add character information, jobs, play style and answers to your screenshot to create a self-introduction snapshot.",
-
-    glamourDescription:
-      "Combine multiple screenshots and equipment information to create a magazine-style glamour showcase image.",
-
-    examples:
-      "EXAMPLES",
-
-    openTool:
-      "OPEN TOOL →",
-
-    aboutText:
-      "EORZEA PROFILE STUDIO provides profile, card and image-making tools themed around FINAL FANTASY XIV characters.",
-
-    disclaimerTitle:
-      "DISCLAIMER",
-
-    disclaimerText:
-      "This site and its tools are unofficial fan-made web tools and are not affiliated with or endorsed by SQUARE ENIX CO., LTD. The creator assumes no responsibility for any loss or damage arising from the use of this site."
-
+    heroLine1: "Your character,",
+    heroLine2: "more uniquely yours.",
+    heroDescription: "EORZEA PROFILE STUDIO is an unofficial series of web tools created for enjoying FINAL FANTASY XIV characters and memories from your adventures.",
+    profileDescription: "Answer 20 questions about your character and create four original profile cards featuring your own screenshots.",
+    portraitDescription: "Combine your Lodestone character information with answers to 20 questions and turn your adventures into four colorful cards.",
+    snapshotDescription: "Add character information, jobs, play style and answers to your screenshot to create a self-introduction snapshot.",
+    glamourDescription: "Combine multiple screenshots and equipment information to create a magazine-style glamour showcase image.",
+    wallpaperDescription: "Combine your FFXIV screenshots with a calendar to create original smartphone wallpapers.",
+    examples: "EXAMPLES",
+    openTool: "OPEN TOOL →",
+    aboutText: "EORZEA PROFILE STUDIO provides profile, card and image-making tools themed around FINAL FANTASY XIV characters.",
+    disclaimerTitle: "DISCLAIMER",
+    disclaimerText: "This site and its tools are unofficial fan-made web tools and are not affiliated with or endorsed by SQUARE ENIX CO., LTD. The creator assumes no responsibility for any loss or damage arising from the use of this site."
   }
-
 };
 
+/* LANGUAGE */
 
-
-/* ==========================================
-   LANGUAGE
-========================================== */
-
-const languageButtons =
-  document.querySelectorAll(
-    ".language-switch button"
-  );
-
+const languageButtons = document.querySelectorAll(".language-switch button");
 
 function changeLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
 
-  currentLanguage =
-    language;
+  document.querySelectorAll("[data-i18n]").forEach(element => {
+    const key = element.dataset.i18n;
+    const value = translations[language][key];
 
-
-  document.documentElement.lang =
-    language;
-
-
-  document
-    .querySelectorAll(
-      "[data-i18n]"
-    )
-    .forEach(
-      element => {
-
-        const key =
-          element.dataset.i18n;
-
-
-        const value =
-          translations[language][key];
-
-
-        if (
-          value !== undefined
-        ) {
-
-          element.textContent =
-            value;
-
-        }
-
-      }
-    );
-
-
-  languageButtons.forEach(
-    button => {
-
-      button.classList.toggle(
-        "active",
-        button.dataset.lang === language
-      );
-
+    if (value !== undefined) {
+      element.textContent = value;
     }
-  );
+  });
 
+  languageButtons.forEach(button => {
+    button.classList.toggle("active", button.dataset.lang === language);
+  });
 }
 
+languageButtons.forEach(button => {
+  button.addEventListener("click", () => {
+    changeLanguage(button.dataset.lang);
+  });
+});
 
-languageButtons.forEach(
-  button => {
+/* IMAGE LIGHTBOX */
 
-    button.addEventListener(
-      "click",
-      () => {
-
-        changeLanguage(
-          button.dataset.lang
-        );
-
-      }
-    );
-
-  }
-);
-
-
-
-/* ==========================================
-   IMAGE LIGHTBOX
-========================================== */
-
-const imageLightbox =
-  document.getElementById(
-    "imageLightbox"
-  );
-
-
-const lightboxImage =
-  document.getElementById(
-    "lightboxImage"
-  );
-
-
-const lightboxClose =
-  document.getElementById(
-    "lightboxClose"
-  );
-
-
-const exampleImageButtons =
-  document.querySelectorAll(
-    ".example-image-button"
-  );
-
+const imageLightbox = document.getElementById("imageLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxClose = document.getElementById("lightboxClose");
+const exampleImageButtons = document.querySelectorAll(".example-image-button");
 
 function openLightbox(image) {
+  if (!image || !imageLightbox || !lightboxImage) return;
 
-  if (
-    !image ||
-    !imageLightbox ||
-    !lightboxImage
-  ) {
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt;
 
-    return;
-
-  }
-
-
-  lightboxImage.src =
-    image.src;
-
-
-  lightboxImage.alt =
-    image.alt;
-
-
-  imageLightbox.classList.add(
-    "active"
-  );
-
-
-  imageLightbox.setAttribute(
-    "aria-hidden",
-    "false"
-  );
-
-
-  document.body.classList.add(
-    "lightbox-open"
-  );
-
+  imageLightbox.classList.add("active");
+  imageLightbox.setAttribute("aria-hidden", "false");
+  document.body.classList.add("lightbox-open");
 }
-
 
 function closeLightbox() {
+  if (!imageLightbox || !lightboxImage) return;
 
+  imageLightbox.classList.remove("active");
+  imageLightbox.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("lightbox-open");
+  lightboxImage.src = "";
+}
+
+exampleImageButtons.forEach(button => {
+  button.addEventListener("click", event => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const image = button.querySelector("img");
+    openLightbox(image);
+  });
+});
+
+if (lightboxClose) {
+  lightboxClose.addEventListener("click", event => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeLightbox();
+  });
+}
+
+if (imageLightbox) {
+  imageLightbox.addEventListener("click", event => {
+    if (event.target === imageLightbox) {
+      closeLightbox();
+    }
+  });
+}
+
+document.addEventListener("keydown", event => {
   if (
-    !imageLightbox ||
-    !lightboxImage
+    event.key === "Escape" &&
+    imageLightbox &&
+    imageLightbox.classList.contains("active")
   ) {
-
-    return;
-
+    closeLightbox();
   }
-
-
-  imageLightbox.classList.remove(
-    "active"
-  );
-
-
-  imageLightbox.setAttribute(
-    "aria-hidden",
-    "true"
-  );
-
-
-  document.body.classList.remove(
-    "lightbox-open"
-  );
-
-
-  lightboxImage.src =
-    "";
-
-}
-
-
-exampleImageButtons.forEach(
-  button => {
-
-    button.addEventListener(
-      "click",
-      event => {
-
-        event.preventDefault();
-
-        event.stopPropagation();
-
-
-        const image =
-          button.querySelector(
-            "img"
-          );
-
-
-        openLightbox(
-          image
-        );
-
-      }
-    );
-
-  }
-);
-
-
-if (
-  lightboxClose
-) {
-
-  lightboxClose.addEventListener(
-    "click",
-    event => {
-
-      event.preventDefault();
-
-      event.stopPropagation();
-
-      closeLightbox();
-
-    }
-  );
-
-}
-
-
-if (
-  imageLightbox
-) {
-
-  imageLightbox.addEventListener(
-    "click",
-    event => {
-
-      if (
-        event.target === imageLightbox
-      ) {
-
-        closeLightbox();
-
-      }
-
-    }
-  );
-
-}
-
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (
-      event.key === "Escape" &&
-      imageLightbox &&
-      imageLightbox.classList.contains(
-        "active"
-      )
-    ) {
-
-      closeLightbox();
-
-    }
-
-  }
-);
-
-
-
-/* ==========================================
-   INITIAL LANGUAGE
-========================================== */
+});
 
 changeLanguage("ja");
